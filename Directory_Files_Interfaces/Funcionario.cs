@@ -11,6 +11,22 @@ namespace Directory_Files_Interfaces
         public DateTime DataNascimento { get; private set; }
         public decimal Salario { get; set; }
 
+        public Funcionario()
+        {
 
+        }
+
+        public Funcionario(int id, string nome, DateTime dataNascimento, decimal salario)
+        {
+            Id = id;
+            Nome = nome;
+            DataNascimento = dataNascimento;
+            Salario = salario;
+        }
+
+        public override string ToString()
+        {
+            return $"{Id,-10} {Nome, -30} {DataNascimento, -30:dd/MM/yyyy} {Salario, -15}";
+        }
     }
 }

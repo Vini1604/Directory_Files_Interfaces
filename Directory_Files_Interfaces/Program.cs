@@ -8,17 +8,23 @@ namespace Directory_Files_Interfaces
         static void Main(string[] args)
         {
             string caminho;
-            string []conteudoArquivo;
+
             Console.Write("Digite o camminho desejado: ");
             caminho = Console.ReadLine();
 
-            IRegistro tipoRegistro = new RegistroEmArquivo(caminho);
+            GerenciadorRegistros gerenciador = new GerenciadorRegistros(new RegistroEmArquivo(caminho));
 
-            var entidades = tipoRegistro.ListarDiretorios();
-            foreach (var entidade in entidades)
+            try
             {
-                Console.WriteLine(entidade);
+                gerenciador.ImprimeDiretorios();
+                gerenciador.ImprimeFuncionarios();
             }
+            catch (DirectoryNotFoundException)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Diretorio nao encontrado");
+            }
+
             
         }
     }
