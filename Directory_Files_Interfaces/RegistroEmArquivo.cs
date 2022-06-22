@@ -33,7 +33,7 @@ namespace Directory_Files_Interfaces
         public List<Funcionario> ListarFuncionarios()
         {
             var arquivosDotNet = Directory.EnumerateFiles(Caminho, "*.IBMDOTNET");
-            ExtrairArquivoFuncionarios(arquivosDotNet);
+            EncontrarFuncionariosArquivosDotNet(arquivosDotNet);
             return _funcionarios;
         }
 
@@ -53,7 +53,7 @@ namespace Directory_Files_Interfaces
             Console.WriteLine($"Arquivo {Path.GetFileName(caminhoArquivo)} lido com sucesso!! Movido para a pasta PROCESSADO");
         }
 
-        public void ExtrairArquivoFuncionarios(IEnumerable<string> arquivosDotNet)
+        private void EncontrarFuncionariosArquivosDotNet(IEnumerable<string> arquivosDotNet)
         {
             foreach (string arquivo in arquivosDotNet)
             {
@@ -61,7 +61,7 @@ namespace Directory_Files_Interfaces
             }
         }
 
-        public void ExtrairFuncionarios(string arquivo)
+        private void ExtrairFuncionarios(string arquivo)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Directory_Files_Interfaces
 
         }
 
-        public Funcionario GerarFuncionario(string[] registro)
+        private Funcionario GerarFuncionario(string[] registro)
         {
             int id = int.Parse(registro[0]);
             string nome = registro[1];
