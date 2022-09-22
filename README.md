@@ -6,13 +6,13 @@
 
 Ex: C:\temp
 
-****************** Arquivos do Diretório ********************
-arquivoA.txt
-arquivoB.txt
-arquivoC.txt
-dadosA.IBMDOTNET
-dadosB.IBMDOTNET
-dadosC.IBMDOTNET
+****************** Arquivos do Diretório ********************  
+arquivoA.txt  
+arquivoB.txt  
+arquivoC.txt  
+dadosA.IBMDOTNET  
+dadosB.IBMDOTNET  
+dadosC.IBMDOTNET  
 
 2 - Criar um arquivo Ex: dados.IBMDOTNET que vai conter o seguinte conteúdo:
 
@@ -27,7 +27,7 @@ id;nome completo;data nascimento;salario
 
 No MESMO programa, caso exista na pasta informada pelo usuário um arquivo com a extensão .IBMDOTNET o mesmo DEVE ser lido e armazenado em List<Funcionario>.
 
-4 - Imprimir na tela os dados a partir do List<Funcionario>, com o seguinte layout
+4 - Imprimir na tela os dados a partir do List<Funcionario>, com o seguinte layout  
 Id             Nome             Data de nascimento           Salario
 
 5 - Depois que o arquivo for lido o arquivo dados.IBMDOTNET, mover para pasta PROCESSADOS, em caso de qualquer ERRO (try catch), mover para pasta ERROR e excluir o arquivo original.
@@ -40,6 +40,6 @@ List<Funcionario> ListaFuncionarios();
 void MoverArquivoSucesso();
 void MoverArquivoErro();
 
-Dicas (Sugestão):
-1 - Usar o Directory
-2 - Usar o FileStream/StreamReader e MinhaVariavelString.Split(";") para transformar uma string em um array de strings
+Dicas (Sugestão):  
+1 - Usar o Directory  
+2 - Usar o FileStream/StreamReader e MinhaVariavelString.Split(";") para transformar uma string em um array de strings  
